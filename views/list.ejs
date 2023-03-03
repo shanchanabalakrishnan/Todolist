@@ -1,27 +1,25 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
+<%- include("header") -%>
 
-    
-        <h1><%= kindOfDay %></h1>
-
-        <ul>
+    <div class="box" id="heading">
+        <h1><%= listTitle %></h1>
+    </div>
+        
             
-
+<div class="box">
            
             <% for (var i=0; i<newListItems.length; i++) { %>
-                <li><%= newListItems[i] %></li>
-
-            <% } %>
-        </ul>
-    
-   <form class="" action="/" method="post">
-    <input type="text" name="newItem">
-    <button type="submit" name="button">Add</button>
+                <div class="item">
+                    <input type="checkbox">
+                    <p><%= newListItems[i] %></p>
+                </div>
+                 <% } %>
+        
+    <form class="item" action="/" method="post">
+    <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+    <button type="submit" name="List" value="a value">+</button>
    </form>
-    
-</body>
-</html>
+
+</div>
+
+<%- include("footer") -%>
+
